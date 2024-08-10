@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+INGRESO SOLICITUD PRESUPUESTO <br /> <br /> <br />
+    {% block title %} Ingreso Presupuesto {% endblock title %}
+
+    {% block main %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ mi_formulario.as_table }}
+            </table>
+            <input type="submit" value="Enviar">
+        </form>
+    {% endblock main %}
+
+</font>   
+</body>
+{% endblock %} 
+</html>

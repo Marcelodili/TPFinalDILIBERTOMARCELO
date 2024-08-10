@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+Resultado busqueda:  <br />
+{% if Presupuestado %}
+<ul>
+    {% for p in Presupuestado %}   
+    <li>{{p.Presupuestado}}</li> 
+{% endfor %}
+</ul>
+{% endif %}
+</font>   
+</body>
+{% endblock Cambia %}
+</html>
