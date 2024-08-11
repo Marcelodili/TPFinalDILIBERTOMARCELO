@@ -8,6 +8,7 @@ from App01.views import ofertast
 from App01.views import buscapresupuesto
 from App01.views import buscar
 from App01.views import ingresecliente
+from App01.views import about
 from MD.view import msg01
 from MD.view import hoy
 from MD.view import param01
@@ -27,6 +28,7 @@ urlpatterns = [
 #    path("ingrese", ingrese),
 #    path("ofertas", ofertas),
     path('', views.inicio, name="Inicio"),
+    path('about/', views.about, name="About"),
     path('busqueda/', views.busqueda, name="Busqueda"),
     path('ingrese/', views.ingrese, name="Ingrese"),
     path('ofertas/', views.ofertas, name="Ofertas"),

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 from django.http import HttpResponse
 from django.db import models
@@ -12,6 +14,10 @@ from .forms import IngresarFormularioCliente
 from .forms import BuscaPresuForm
 
 # # Create your views here.
+
+
+def about(request):
+    return render(request, "App01/about.html")
 
 
 def inicio(request):
@@ -35,7 +41,7 @@ def ofertast(request):
     contexto = {"ofertast": ofertast} 
     return render(request, "App01/ofertast.html", contexto)
 
-
+@login_required
 def ingrese(request):
     if request.method == "POST":
         mi_formulario = IngresarFormulario(request.POST)
@@ -71,7 +77,7 @@ def ingrese_input(request):
         return render(request, "App01/inicio.html")
     return render(request, "App01/ingrese.html")
 
-
+@login_required
 def buscapresupuestoG(request):
     return render(request, "App01/buscapresupuestoG.html")
 
@@ -86,7 +92,7 @@ def buscar(request):
         respuesta = "sin datos"
     HttpResponse(respuesta)
 
-
+@login_required
 def buscapresupuesto(request):
     if request.method == "POST":
         mi_formulario = BuscaPresuForm(request.POST)

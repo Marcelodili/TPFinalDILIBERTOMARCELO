@@ -22,10 +22,10 @@
     <body id="page-top" style="background-color:LightBlue;">
         <!-- Navigation-->
         <font color="Black" face="arial" size=-3&gt>
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg bg-secondary  fixed-top" id="mainNav">
+            <div class="container px+5">
                 <a class="navbar-brand" href="#page-top">Turismo</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
@@ -44,10 +44,39 @@
                 <a class="navbar-brand" href="{% url 'Ingrese' %}">Presupuesto</a>
                 <a class="navbar-brand" href="{% url 'BuscaPresupuesto' %}">Estado</a>
                 <a class="navbar-brand" href="{% url 'Ofertase.' %}">EditarOfertas</a>
-                    <a class="btn btn-me btn-outline-light" href="{% url 'Login' %}">
-                        <i class="Iniciar sesión"></i> Login
-                    </a>
+        {% if request.user.is_authenticated %}
+            <a class="btn btn-me btn-outline-light" href="{% url 'Logout' %}">
+            <i class="Cerrar sesión"></i> Logout  </a>
+            <a class="btn btn-primary" href="{% url 'Editarp' %}">EditarPerfil</a>-->
+        {% else %} 
+<!--                 <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>-->
+<!--                 <a class="btn btn-primary" href="{% url 'Register' %}">Registro</a>-->
 
+        {% endif %} 
+ 
+                {% if request.user.is_authenticated %}
+<a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ request.user.username }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="{% url 'Logout' %}">Cerrar sesión</a></li>
+                            <li><a class="dropdown-item" href="{% url 'Editarp' %}">Editar Perfil</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cuenta
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{% url 'Login' %}">Inciar Sesión</a></li>
+                            <li><a class="dropdown-item" href="{% url 'Register' %}">Crear cuenta</a></li>
+                        </ul>
+                    </div>
+                {% endif %}   
+            </a>             
 
                     </ul>
                 </div>
@@ -147,6 +176,7 @@
                 <div class="row">
                     <div class="col-lg-4 ms-auto"><p class="lead">Buscamos lo mejor para vos. ¡Aprovechalo!</p></div>
                     <div class="col-lg-4 me-auto"><p class="lead"></p></div>
+                    <a class="btn btn-primary" href="{% url 'About' %}">Mas datos</a>
                 </div>
                 <!-- About Section Button-->
 <!--                <div class="text-center mt-4">

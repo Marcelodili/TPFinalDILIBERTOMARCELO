@@ -27,6 +27,7 @@ urlpatterns = [
 #    path("ingrese", ingrese),
 #    path("ofertas", ofertas),
     path('', views.inicio, name="Inicio"),
+    path('about/', views.abuot, name="About"),   
     path('busqueda/', views.busqueda, name="Busqueda"),
     path('ingrese/', views.ingrese, name="Ingrese"),
     path('ofertas/', views.ofertas, name="Ofertas"),
@@ -35,4 +36,5 @@ urlpatterns = [
     path('buscapresupuesto/', views.buscapresupuesto, name="BuscaPresupuesto"),
     path('buscar/', views.buscar),
     path('ingresecliente/', views.ingresecliente, name="IngreseCliente"),
+
 ]

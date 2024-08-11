@@ -10,16 +10,21 @@
 <br />  
 <br /> 
 <p>OFERTAS. Mantenimiento:    <br /></p>
+{% if request.user.is_superuser %}
 <a href="{% url 'Ofertasea.'  %}">Agregar</a>
+{% endif %}
 {% for p in ofertase %}
 <p>° Codigo: {{p.codigo}} | Destino: {{p.nombre}} | </p>
 |||
 <a href="{% url 'Ofertased.' p.pk %}">Detallar</a>
+
+{% if request.user.is_superuser %}
 ||--||
 <a href="{% url 'EditarOferta.' p.pk %}">Editar</a>
 ||--||
 <a href="{% url 'BorrarOferta.' p.pk %}">Borrar</a>
-||||{{p.id}}|{{p.pk}}|{{p.codigo}}|
+{% endif %}
+||||<!--{{p.id}}|{{p.pk}}|{{p.codigo}}|-->
 {% endfor %}
 </font>   
 </body>
