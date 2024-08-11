@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+# 
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+<h1>Actualizar usuario: <br /></h1>
+<div class="d-flex justify-content-center">
+
+    <div class="d-flex flex-column">
+        <p class="fs-5 fw-bold">{{ msg_register }}</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <table>
+            {{ form }}
+<!----            {{ form.as_table }}  -->
+        </table>
+            <input type="submit" value="Actualizar">
+            <a class="btn btn-primary" href="{% url 'Editarpass' %}">Cambiar contraseña</a>
+        </form>
+        <br /> 
+    </div>
+</div>
+</font>   
+</body>
+{% endblock Cambia %}
+</html>

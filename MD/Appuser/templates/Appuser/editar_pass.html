@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+# 
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+<h1>Actualizar password: <br /></h1>
+<div class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+        <form action="" method="POST">
+            {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Actualizar password">
+        </form>
+    </div>
+</div>
+</font>   
+</body>
+{% endblock Cambia %}
+</html>
