@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+# 
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+<h1>Detalle: <br /></h1>
+{% csrf_token %}
+<p>Codigo: <i>{{ object.codigo }}</i></p>
+<p>Destino: <i>{{ object.nombre }}</i></p>
+<p>Hotel: <i>{{ object.hotel }}</i></p>
+<p>Precio: <i>{{ object.precio }}</i></p>
+<p>Contacto: <i>{{ object.contacto }}</i></p>
+<p>Provincia: <i>{{ object.ubicacion }}</i></p>
+ <p>   <a href="{% url 'Ofertase.' %}">Regresar</a> </p>
+</form>
+</font>   
+</body>
+{% endblock %}
+</html>

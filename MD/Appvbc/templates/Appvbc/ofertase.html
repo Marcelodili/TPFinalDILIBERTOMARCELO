@@ -9,24 +9,18 @@
 <br /> 
 <br />  
 <br /> 
-
-OFERTAS. Mantenimiento: <br />  <br /> <br />
+<p>OFERTAS. Mantenimiento:    <br /></p>
 {% for p in ofertase %}
-<p>° Codigo: {{p.codigo}} | Destino: {{p.nombre}} | Hotel: {{p.hotel}} | Precio: {{p.precio}}</p>
-|{{p.id}}|
-{{p.pk}}|
-{{p.codigo}}|
+<p>° Codigo: {{p.codigo}} | Destino: {{p.nombre}} | </p>
 |||
+<a href="{% url 'Ofertased.' p.pk %}">Detallar</a>
+||--||
 <a href="{% url 'EditarOferta.' p.pk %}">Editar</a>
 ||--||
 <a href="{% url 'BorrarOferta.' p.pk %}">Borrar</a>
-|||
-<!---- <li>{{p}}</li> -->
+||||{{p.id}}|{{p.pk}}|{{p.codigo}}|
 {% endfor %}
 </font>   
 </body>
-
 {% endblock %}
- 
-
 </html>

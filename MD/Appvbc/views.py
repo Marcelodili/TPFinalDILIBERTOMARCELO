@@ -31,6 +31,12 @@ class ofertaseDeleteView(DeleteView):
     model = Destino
     template_name = "Appvbc/ofertaseBorrar.html"
     success_url = reverse_lazy("BorrarOferta.")
+
+
+class ofertasedListView(UpdateView):
+    model = Destino
+    template_name = "Appvbc/ofertaseDetalle.html"
+    fields = ["contacto", "hotel", "precio"]
     
 
 
