@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+# 
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+
+Agregar: <br />  <br /> <br />
+<p>   <a href="{% url 'Ofertase.' %}">Regresar</a> </p>
+<form method="POST">
+    {% csrf_token %}
+    <div>Codigo: {{ form.codigo }}</div>
+    <div>Nombre: {{ form.nombre }}</div>
+    <div>Ubicacion: {{ form.ubicacion }}</div>
+    <div>Hotel: {{ form.hotel }}</div>
+    <div>contacto: {{ form.contacto }}</div>
+    <div>Precio {{ form.precio }}</div><br />
+    <input type="submit" value="Agregar">
+
+</form>
+</font>   
+</body>
+{% endblock %}
+</html>
+

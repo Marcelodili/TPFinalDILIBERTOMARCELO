@@ -8,4 +8,5 @@ urlpatterns = [
     path('ofertas/editar/<int:pk>', views.ofertaseUpdateView.as_view(), name="EditarOferta."),
     path('ofertas/borrar/<int:pk>', views.ofertaseDeleteView.as_view(), name="BorrarOferta."),
     path("ofertas/detalle/<int:pk>", views.ofertasedListView.as_view(), name="Ofertased."),
+    path("ofertas/agrega", views.ofertaseaCreateView.as_view(), name="Ofertasea.")
 ]

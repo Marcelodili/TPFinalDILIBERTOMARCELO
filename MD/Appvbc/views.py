@@ -27,17 +27,23 @@ class ofertaseUpdateView(UpdateView):
     fields = ["contacto", "hotel", "precio"]
 
 
+class ofertaseaCreateView(CreateView):
+    model = Destino
+    template_name = "Appvbc/ofertaseAgregar.html"
+    success_url = reverse_lazy("Ofertasea.")
+    fields = ["nombre", "codigo", "contacto", "hotel", "precio", "ubicacion"]
+
+
 class ofertaseDeleteView(DeleteView):
     model = Destino
     template_name = "Appvbc/ofertaseBorrar.html"
-    success_url = reverse_lazy("BorrarOferta.")
+    success_url = reverse_lazy("Ofertase.")
+#    success_url = reverse_lazy("BorrarOferta.")
 
 
 class ofertasedListView(UpdateView):
     model = Destino
     template_name = "Appvbc/ofertaseDetalle.html"
     fields = ["contacto", "hotel", "precio"]
-    
-
 
 # clases basadas en vistas>

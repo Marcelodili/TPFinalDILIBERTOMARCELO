@@ -10,12 +10,14 @@
 <br />  
 <br /> 
 
-OFERTAS: <br />  <br /> <br />
+Editar: <br />  <br /> <br />
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Actualizar">
+</form>
 
 </font>   
 </body>
-
 {% endblock %}
- 
-
 </html>
