@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+# http://127.0.0.1:8000/vbc/ofertas/listar
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+
+OFERTAS. Mantenimiento: <br />  <br /> <br />
+{% for p in ofertase %}
+<p>° Codigo: {{p.codigo}} | Destino: {{p.nombre}} | Hotel: {{p.hotel}} | Precio: {{p.precio}}</p>
+|{{p.id}}|
+{{p.pk}}|
+{{p.codigo}}|
+|||
+<a href="{% url 'EditarOferta.' p.pk %}">Editar</a>
+||--||
+<a href="{% url 'BorrarOferta.' p.pk %}">Borrar</a>
+|||
+<!---- <li>{{p}}</li> -->
+{% endfor %}
+</font>   
+</body>
+
+{% endblock %}
+ 
+
+</html>

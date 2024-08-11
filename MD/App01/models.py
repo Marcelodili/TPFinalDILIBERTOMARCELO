@@ -34,9 +34,10 @@ class Destino(models.Model):
     contacto = models.EmailField() 
     hotel = models.CharField(max_length=30) 
     precio = models.IntegerField()
+    	
 
     def __str__(self):
-        return f"Codigo: {self.codigo} - Ciudad {self.nombre} - PrecioDiario {self.precio} - Hotel {self.hotel}"
+        return f"Codigo: {self.codigo} - Ciudad {self.nombre} - PrecioDiario {self.precio} - Hotel {self.hotel} - Contacto {self.contacto}"
 
 
 class Presupuestar(models.Model):

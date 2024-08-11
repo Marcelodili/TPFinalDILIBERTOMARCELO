@@ -3,5 +3,8 @@ from Appvbc import views
 
 # http://127.0.0.1:8000/vbc/ofertas/listar
 urlpatterns = [
-    path("ofertas/listar", views.ofertasListView.as_view(), name="Ofertas.")
+    path("ofertas/listar", views.ofertasListView.as_view(), name="Ofertas."),
+    path("ofertas/edita", views.ofertaseListView.as_view(), name="Ofertase."),
+    path('ofertas/editar/<int:pk>', views.ofertaseUpdateView.as_view(), name="EditarOferta."), 
+    path('ofertas/borrar/<int:pk>', views.ofertaseDeleteView.as_view(), name="BorrarOferta."),
 ]

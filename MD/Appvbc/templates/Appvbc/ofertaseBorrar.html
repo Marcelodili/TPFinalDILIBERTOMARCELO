@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+# 
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+<form action="" method="POST">
+    {% csrf_token %}
+        Confirma eliminación {{ object.pk }}:{{ object.nombre }}?
+    <input type="submit" value="Borrar">
+</form>
+ <br />  <br /> <br />
+</font>   
+</body>
+
+{% endblock %}
+ 
+
+</html>
