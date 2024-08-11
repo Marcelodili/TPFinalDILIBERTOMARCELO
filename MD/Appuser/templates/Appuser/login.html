@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+<h1>Inicio de sesión: <br /></h1>
+{# Este div sólo está agregado para centrar el formulario en la página usando Bootstrap #}
+<div class="d-flex justify-content-center">
+
+    {# Con este div colocamos el título y debajo el formulario #}
+    <div class="d-flex flex-column">
+
+        {# Mensaje personalizado en la vista de Login con estilos #}
+        <p class="fs-5 fw-bold">{{ msg_login }}</p>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+            <input type="submit" value="Iniciar sesión">
+
+        </form>
+
+    </div>
+</div>
+</font>   
+</body>
+{% endblock Cambia %}
+</html>

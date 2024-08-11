@@ -44,9 +44,8 @@
                 <a class="navbar-brand" href="{% url 'Ingrese' %}">Presupuesto</a>
                 <a class="navbar-brand" href="{% url 'BuscaPresupuesto' %}">Estado</a>
                 <a class="navbar-brand" href="{% url 'Ofertase.' %}">EditarOfertas</a>
-                    <a class="btn btn-me btn-outline-light" href="https://www.com/r/">
-                        <i class="fas fa-download me-2"></i>
-                        link!
+                    <a class="btn btn-me btn-outline-light" href="{% url 'Login' %}">
+                        <i class="Iniciar sesión"></i> Login
                     </a>
 
 
@@ -59,7 +58,7 @@
 <br /> 
 <br />
     {% block Cambia %}
-    {% endblock %} 
+    {% endblock Cambia %} 
 
         <!-- Masthead DINAMICO FIN*** -->
 

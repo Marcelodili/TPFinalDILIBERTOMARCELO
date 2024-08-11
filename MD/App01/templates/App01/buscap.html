@@ -11,10 +11,16 @@
 <br /> 
 
 
-Resultado busqueda.  <br />
+Resultado busqueda.
+<p>   <a href="{% url 'BuscaPresupuesto' %}">Regresar</a> </p>  <br />
 {% for p in Presupuestos %}
-<li>p: {{p}}</li>
-<!--<li>PresupuestoDNI: {{p.clientedni}}</li>-->
+<!--<li>{{p}}</li>-->
+<li>PresupuestoID: {{p.id}} | FechaViaje: {{ p.fechaviaje }} | Destino: {{ p.codigodestino }} | DNI: {{ p.clientedni }}</li>
+<p><i>Transporte: {{ p.codigotransporte }}</i></p>
+<p><i>Dias: {{ p.dias }}</i></p>
+<p><i>Pasajeros: {{ p.pasajeros }}</i></p>
+<p><i>Comentario: {{ p.comentario }}</i></p>
+<p><i>Enviado: {{ p.enviado }}</i></p><br />
 {% endfor %}
 </font>   
 </body>

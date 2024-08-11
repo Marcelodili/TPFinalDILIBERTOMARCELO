@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+# 
+{% extends "App01/_base.html" %}
+{% load static %}
+{% block Cambia %}
+<body>
+    <font color="Black" face="arial" size=4&gt>
+<br /> 
+<br /> 
+<br />  
+<br /> 
+<h1>Registro: <br /></h1>
+<div class="d-flex justify-content-center">
+
+    <div class="d-flex flex-column">
+        <p class="fs-5 fw-bold">{{ msg_register }}</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+</div>
+</font>   
+</body>
+{% endblock Cambia %}
+</html>

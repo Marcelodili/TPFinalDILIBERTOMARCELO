@@ -53,5 +53,5 @@ class Presupuestar(models.Model):
     enviado = models.DateField()
 
     def __str__(self):
-        return f"Codigo: {self.codigo} - DNI {self.clientedni} - CodTransporte {self.codigotransporte} - CodDestino {self.codigodestino} - Comentario {self.comentario} - Fecha {self.fechaviaje} - Dias {self.dias} - Pasajeros {self.pasajeros} - Enviado {self.enviado}"
+        return f"CodigoID: {self.id} - DNI: {self.clientedni} - CodigoTransporte: {self.codigotransporte} - CodigoDestino: {self.codigodestino} - Comentario: {self.comentario} - Fecha: {self.fechaviaje} - Dias: {self.dias} - Pasajeros: {self.pasajeros} - Enviado: {self.enviado}"
 

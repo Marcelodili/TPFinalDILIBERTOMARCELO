@@ -3,9 +3,9 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-# clases basadas en vistas>
-from App01.models import Destino
 from django.urls import reverse_lazy
+from App01.models import Destino
+
 
 
 class ofertasListView(ListView):
