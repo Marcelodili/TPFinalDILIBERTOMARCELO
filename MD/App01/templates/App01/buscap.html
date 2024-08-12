@@ -9,18 +9,20 @@
 <br /> 
 <br />  
 <br /> 
-
-
 Resultado busqueda.
 <p>   <a href="{% url 'BuscaPresupuesto' %}">Regresar</a> </p>  <br />
 {% for p in Presupuestos %}
 <!--<li>{{p}}</li>-->
-<li>PresupuestoID: {{p.id}} | FechaViaje: {{ p.fechaviaje }} | Destino: {{ p.codigodestino }} | DNI: {{ p.clientedni }}</li>
-<p><i>Transporte: {{ p.codigotransporte }}</i></p>
-<p><i>Dias: {{ p.dias }}</i></p>
-<p><i>Pasajeros: {{ p.pasajeros }}</i></p>
-<p><i>Comentario: {{ p.comentario }}</i></p>
-<p><i>Enviado: {{ p.enviado }}</i></p><br />
+<!-- no funciona validacion % if request.user == p.user %-->
+{% if request.user.strip() == p.user.strip() %}
+    <li>PresupuestoID: {{p.id}} | FechaViaje: {{ p.fechaviaje }} | Destino: {{ p.codigodestino }} | DNI: {{ p.clientedni }}</li>
+    <p><i>Transporte: {{ p.codigotransporte }}</i></p>
+    <p><i>Dias: {{ p.dias }}</i></p>
+    <p><i>Pasajeros: {{ p.pasajeros }}</i></p>
+    <p><i>Comentario: {{ p.comentario }}</i></p>
+    <p><i>Enviado: {{ p.enviado }}</i></p>
+    <p><i>Usuario: {{ p.user }}</i></p><br />
+{% endif %}
 {% endfor %}
 </font>   
 </body>

@@ -11,9 +11,10 @@ class Cliente(models.Model):
     rubro = models.IntegerField()
     email = models.EmailField()
     fechanacimiento = models.DateField()
+    user = models.CharField(max_length=40, blank=True, null=True)
 
     def __str__(self):
-        return f"DNI: {self.dni} - Nombre {self.nombre} - Apellido {self.apellido} - email {self.email} - FechaNacimiento {self.nacimiento}"
+        return f"DNI: {self.dni} - Nombre {self.nombre} - Apellido {self.apellido} - email {self.email} - FechaNacimiento {self.fechanacimiento} - User {self.user}"
 
 
 class Transporte(models.Model): 
@@ -34,7 +35,6 @@ class Destino(models.Model):
     contacto = models.EmailField() 
     hotel = models.CharField(max_length=30) 
     precio = models.IntegerField()
-    	
 
     def __str__(self):
         return f"Codigo: {self.codigo} - Ciudad {self.nombre} - PrecioDiario {self.precio} - Hotel {self.hotel} - Contacto {self.contacto}"
@@ -51,7 +51,9 @@ class Presupuestar(models.Model):
     pasajeros = models.IntegerField() 
     potencial = models.BooleanField()
     enviado = models.DateField()
+    user = models.CharField(max_length=40, blank=True, null=True)
 
     def __str__(self):
-        return f"CodigoID: {self.id} - DNI: {self.clientedni} - CodigoTransporte: {self.codigotransporte} - CodigoDestino: {self.codigodestino} - Comentario: {self.comentario} - Fecha: {self.fechaviaje} - Dias: {self.dias} - Pasajeros: {self.pasajeros} - Enviado: {self.enviado}"
+        return f"CodigoID: {self.id} - DNI: {self.clientedni} - CodigoTransporte: {self.codigotransporte} - CodigoDestino: {self.codigodestino} - Comentario: {self.comentario} - Fecha: {self.fechaviaje} - Dias: {self.dias} - Pasajeros: {self.pasajeros} - Enviado: {self.enviado} - User {self.user}"
+    
 

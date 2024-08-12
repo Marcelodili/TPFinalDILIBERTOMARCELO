@@ -17,6 +17,7 @@ class IngresarFormularioCliente(forms.Form):
     apellido = forms.CharField(max_length=30)
     email = forms.EmailField()
     fechanacimiento = forms.DateField()
+    user = None
  
 
 class BuscaPresuForm(forms.Form):

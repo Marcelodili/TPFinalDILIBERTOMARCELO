@@ -43,24 +43,26 @@ def ofertast(request):
 
 @login_required
 def ingrese(request):
+    usuario=request.user
     if request.method == "POST":
         mi_formulario = IngresarFormulario(request.POST)
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
-            ingrese = Presupuestar(clientedni=informacion["clientedni"], codigotransporte=informacion["codigotransporte"], codigodestino=informacion["codigodestino"], comentario=informacion["comentario"], fechaviaje=informacion["fechaviaje"], dias=informacion["dias"], pasajeros=informacion["pasajeros"])
+            ingrese = Presupuestar(clientedni=informacion["clientedni"], codigotransporte=informacion["codigotransporte"], codigodestino=informacion["codigodestino"], comentario=informacion["comentario"], fechaviaje=informacion["fechaviaje"], dias=informacion["dias"], pasajeros=informacion["pasajeros"], user=usuario)
             ingrese.save()
             return render(request, "App01/inicio.html")
     else:
         mi_formulario = IngresarFormulario()
     return render(request, "App01/ingrese.html", {"mi_formulario": mi_formulario})
 
-
+@login_required
 def ingresecliente(request):
+    usuario = request.user
     if request.method == "POST":
         mi_formulario = IngresarFormularioCliente(request.POST)
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
-            ingrese = Cliente(dni=informacion["dni"], nombre=informacion["nombre"], email=informacion["email"], fechanacimiento=informacion["fechanacimiento"])
+            ingrese = Cliente(dni=informacion["dni"], nombre=informacion["nombre"], email=informacion["email"], fechanacimiento=informacion["fechanacimiento"], user=usuario)
             ingrese.save()
             return render(request, "App01/inicio.html")
     else:
@@ -99,7 +101,7 @@ def buscapresupuesto(request):
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
 #            ingrese = Presupuestar.objects.filter(clientedni__icontains=informacion["clientedni"])
-            ingrese = Presupuestar.objects.filter(clientedni=informacion["clientedni"])
+            ingrese = Presupuestar.objects.filter(clientedni=informacion["clientedni"], user__icontains=request.user)
             return render(request, "App01/buscap.html", {"Presupuestos": ingrese})
     else:
         mi_formulario = BuscaPresuForm()
