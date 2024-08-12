@@ -50,7 +50,7 @@
             <i class="Cerrar sesión"></i> Logout  
             <img src="{{request.user.avatar.imagen.url}}" alt="" height="30"> 
         </a>
-            <a class="btn btn-primary" href="{% url 'Editaru' %}">EditarUsuario</a>
+            <a class="btn btn-primary" href="{% url 'Editaru' %}">EditarUsuario {{ request.user.username }}</a>
 <!--            <a class="btn btn-primary btn-outline-light" href="{% url 'Logout' %}">Logout</a> -->
         {% else %} 
 <!--                 <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>-->
@@ -60,7 +60,7 @@
  
                 {% if request.user.is_authenticated %}
 <a>
-                    <div class="dropdown">
+    <!--                <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ request.user.username }}
                         </button>
@@ -68,7 +68,7 @@
                             <li><a class="dropdown-item" href="{% url 'Logout' %}">CerrarSesión</a></li>
                             <li><a class="dropdown-item" href="{% url 'Editaru' %}">EditarUsuario</a></li>
                         </ul>
-                    </div>
+                    </div>-->
                 {% else %}
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
