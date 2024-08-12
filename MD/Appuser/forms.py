@@ -21,8 +21,9 @@ class UserEditform(UserChangeForm):
     first_name = forms.CharField(max_length=30, label="Nombre")
     last_name = forms.CharField(max_length=30, label="Apellido")
     email = forms.EmailField()
+    imagen = forms.ImageField(label="Avatar", required=False)
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "email"]
+        fields = ["first_name", "last_name", "email", "imagen"]
 

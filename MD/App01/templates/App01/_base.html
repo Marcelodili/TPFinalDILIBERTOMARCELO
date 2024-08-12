@@ -45,8 +45,11 @@
                 <a class="navbar-brand" href="{% url 'BuscaPresupuesto' %}">Estado</a>
                 <a class="navbar-brand" href="{% url 'Ofertase.' %}">EditarOfertas</a>
         {% if request.user.is_authenticated %}
+<!--           <img src="{{request.user.avatar.imagen.url}}" alt="" height="40">--> 
             <a class="btn btn-me btn-outline-light" href="{% url 'Logout' %}">
-            <i class="Cerrar sesión"></i> Logout  </a>
+            <i class="Cerrar sesión"></i> Logout  
+            <img src="{{request.user.avatar.imagen.url}}" alt="" height="30"> 
+        </a>
             <a class="btn btn-primary" href="{% url 'Editaru' %}">EditarUsuario</a>
 <!--            <a class="btn btn-primary btn-outline-light" href="{% url 'Logout' %}">Logout</a> -->
         {% else %} 

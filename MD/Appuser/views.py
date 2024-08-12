@@ -6,6 +6,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
 from Appuser.forms import UserRegisterForm, UserEditform
+from Appuser.models import Avatar
 from django.urls import reverse_lazy
 # <clases basadas en vistas
 from django.views.generic import ListView
@@ -50,8 +51,13 @@ def register(request):
 def editarusuario(request):
     usuario = request.user
     if request.method == "POST":
-        formulario = UserEditform(request.POST, instance=usuario)
+        formulario = UserEditform(request.POST, request.FILES, instance=usuario)
         if formulario.is_valid():
+            if formulario.cleaned_data.get("imagen"):
+                avatar = Avatar(user=usuario, imagen=formulario.cleaned_data.get("imagen"))
+                avatar.save()
+                #usuario.avatar.imagen = formulario.cleaned_data.get("imagen")
+                #usuario.avatar.save()
             formulario.save()
             return render(request, "Appuser/registrook.html")
     else:

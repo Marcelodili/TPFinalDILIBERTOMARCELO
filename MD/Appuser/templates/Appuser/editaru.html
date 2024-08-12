@@ -14,7 +14,7 @@
 
     <div class="d-flex flex-column">
         <p class="fs-5 fw-bold">{{ msg_register }}</p>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
         <table>
             {{ form }}
