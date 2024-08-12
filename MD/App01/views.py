@@ -50,7 +50,7 @@ def ingrese(request):
             informacion = mi_formulario.cleaned_data
             ingrese = Presupuestar(clientedni=informacion["clientedni"], codigotransporte=informacion["codigotransporte"], codigodestino=informacion["codigodestino"], comentario=informacion["comentario"], fechaviaje=informacion["fechaviaje"], dias=informacion["dias"], pasajeros=informacion["pasajeros"], user=usuario)
             ingrese.save()
-            return render(request, "App01/inicio.html")
+            return render(request, "Appuser/registrook.html")
     else:
         mi_formulario = IngresarFormulario()
     return render(request, "App01/ingrese.html", {"mi_formulario": mi_formulario})
@@ -64,7 +64,7 @@ def ingresecliente(request):
             informacion = mi_formulario.cleaned_data
             ingrese = Cliente(dni=informacion["dni"], nombre=informacion["nombre"], email=informacion["email"], fechanacimiento=informacion["fechanacimiento"], user=usuario)
             ingrese.save()
-            return render(request, "App01/inicio.html")
+            return render(request, "Appuser/registrook.html")
     else:
         mi_formulario = IngresarFormularioCliente()
     return render(request, "App01/ingresecliente.html", {"mi_formulario": mi_formulario})

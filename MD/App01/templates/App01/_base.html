@@ -52,6 +52,16 @@
         </a>
             <a class="btn btn-primary" href="{% url 'Editaru' %}">EditarUsuario {{ request.user.username }}</a>
 <!--            <a class="btn btn-primary btn-outline-light" href="{% url 'Logout' %}">Logout</a> -->
+<!-- 
+<ul>
+    <li>
+        <form class="logout-link" action="{% url 'Logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout2</button>
+        </form>
+    </li>
+</ul>
+ -->
         {% else %} 
 <!--                 <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>-->
 <!--                 <a class="btn btn-primary" href="{% url 'Register' %}">Registro</a>-->

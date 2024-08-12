@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordChangeView
 from Appuser.forms import UserRegisterForm, UserEditform
@@ -68,3 +68,8 @@ def editarusuario(request):
 class cambiarPasswordView2(LoginRequiredMixin, PasswordChangeView):
     template_name = "Appuser/editar_pass.html"
     success_url = reverse_lazy("Editaru")
+
+
+def CerrarUsuario(request):
+    logout(request)
+    return render(request, "Appuser/logout.html")

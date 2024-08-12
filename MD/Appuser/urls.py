@@ -14,5 +14,7 @@ urlpatterns = [
     path('register/', views.register, name="Register"),
     path('editaru/', views.editarusuario, name="Editaru"),
     path('editarpass/', views.cambiarPasswordView2.as_view(), name="Editarpass"),    
-    path('logout/', LogoutView.as_view(template_name="Appuser/logout.html"), name="Logout"),
+#    path('logout-/', LogoutView.as_view(template_name="Appuser/logout.html"), name="Logout-"),
+    path('logout/', views.CerrarUsuario, name="Logout"),
+    
 ]
