@@ -101,7 +101,8 @@ def buscapresupuesto(request):
         if mi_formulario.is_valid():
             informacion = mi_formulario.cleaned_data
 #            ingrese = Presupuestar.objects.filter(clientedni__icontains=informacion["clientedni"])
-            ingrese = Presupuestar.objects.filter(clientedni=informacion["clientedni"], user__icontains=request.user)
+#            ingrese = Presupuestar.objects.filter(clientedni=informacion["clientedni"], user__icontains=request.user)
+            ingrese = Presupuestar.objects.filter(user__icontains=request.user).filter(clientedni=informacion["clientedni"])
             return render(request, "App01/buscap.html", {"Presupuestos": ingrese})
     else:
         mi_formulario = BuscaPresuForm()
