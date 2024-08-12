@@ -58,7 +58,7 @@ ROOT_URLCONF = 'MD.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-#        'DIRS': ["D:\_DOCUMENTOS\CODERHOUSE\Phyton\Entrega3\TerceraPreEntregaDiliberto\MD\MD\PLANTILLAS"],
+#        'DIRS': ["D:\_DOCUMENTOS\_\Phyton\Entrega3\TerceraPreEntregaDiliberto\MD\MD\PLANTILLAS"],
         'DIRS': [],
 
         'APP_DIRS': True,
