@@ -54,7 +54,7 @@ def ingrese(request):
         mi_formulario = IngresarFormulario()
     return render(request, "App01/ingrese.html", {"mi_formulario": mi_formulario})
 
-
+@login_required
 def ingresecliente(request):
     if request.method == "POST":
         mi_formulario = IngresarFormularioCliente(request.POST)
