@@ -33,7 +33,7 @@ urlpatterns = [
     path('ingrese/', views.ingrese, name="Ingrese"),
     path('ofertas/', views.ofertas, name="Ofertas"),
     path('ofertast/', views.ofertast, name="OfertasTransporte"),
-    path('buscapresupuestoG/', views.buscapresupuestoG, name="BuscaPresupuesto"),
+    path('buscapresupuestoG/', views.buscapresupuestoG, name="BuscaPresupuestoG"),
     path('buscapresupuesto/', views.buscapresupuesto, name="BuscaPresupuesto"),
     path('buscar/', views.buscar),
     path('ingresecliente/', views.ingresecliente, name="IngreseCliente"),
